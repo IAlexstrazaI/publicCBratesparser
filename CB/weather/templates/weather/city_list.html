@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Book List</h1>
+
+{% if my_city_list %}
+<ul>
+
+    {% for city in my_city_list %}
+    <li>
+        <a href="{{ city.get_absolute_url }}">{{ city.name }}</a> ({{city.country}})
+    </li>
+    {% endfor %}
+
+</ul>
+{% else %}
+<p>There are no books in the library.</p>
+{% endif %}
+{% endblock %}
